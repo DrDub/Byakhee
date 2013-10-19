@@ -134,7 +134,7 @@ CScriptObject::MEMBERRESULT VariantArray::Constructor( Variant* pParameters, int
             if( pParameters[0].IsNumeric() )
             {
                 //start size
-                VariantArray* pArray = new VariantArray( unsigned int(pParameters[0]) );
+                VariantArray* pArray = new VariantArray( (unsigned int)(pParameters[0]) );
                 returnValue = pArray;
                 return OK;
             }
@@ -160,7 +160,7 @@ PVARIANT VariantArray::operator[]( UINT uPos ) const
 	//but the VariantArray needs to resize on the fly
     VariantArray* pThis = (VariantArray*)this;
 
-	if( uPos >= unsigned int(m_Size) ) pThis->m_Size = (uPos+1);
+	if( uPos >= (unsigned int)(m_Size) ) pThis->m_Size = (uPos+1);
 	pThis->SetSize();
 
     if( m_Array )
@@ -209,9 +209,9 @@ void VariantArray::SetSize()
 {
 	if( m_Array )
 	{
-		if( unsigned int(m_Size) != m_nSize )
+		if( (unsigned int)(m_Size) != m_nSize )
 		{
-			int nNewSize = unsigned int(m_Size)+1;
+			int nNewSize = (unsigned int)(m_Size)+1;
 
 			//allocate a new array
             if( nNewSize > MAX_ARRAY_SIZE ) throw OUT_OF_MEMORY;
@@ -220,7 +220,7 @@ void VariantArray::SetSize()
 
 			//copy the elements over
 			int sz;
-			if( unsigned int(m_Size) > m_nSize ) sz = m_nSize; else sz = m_Size;
+			if( (unsigned int)(m_Size) > m_nSize ) sz = m_nSize; else sz = m_Size;
 			for( int n = 0; n < sz; n++ )
 			{
 				pNewArray[n] = m_Array[n];
@@ -241,7 +241,7 @@ void VariantArray::SetSize()
 	else
 	{
 		//create a new array
-		int nNewSize = unsigned int(m_Size)+1;
+		int nNewSize = (unsigned int)(m_Size)+1;
 
         if( nNewSize > MAX_ARRAY_SIZE ) throw OUT_OF_MEMORY;
 		m_Array = new Variant[ nNewSize ];

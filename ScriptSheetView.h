@@ -12,7 +12,7 @@
 #include "ScriptEngine/ScriptObject.h"
 #include "FieldEdit.h"
 #include "Field.h"
-#include "ZoomView.h"
+#include "zoomview.h"
 
 #define SHEETPARAM_SHADOWOFFSET 1
 

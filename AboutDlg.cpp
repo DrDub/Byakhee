@@ -1,5 +1,4 @@
-#include "stdafx.h"
-#include "byakhee.h"
+#include "Byakhee.h"
 
 #include "AboutDlg.h"
 

@@ -20,7 +20,7 @@
  */
 
 #include "stdafx.h"
-#include "byakhee.h"
+#include "Byakhee.h"
 #include "Field.h"
 #include "FieldEdit.h"
 

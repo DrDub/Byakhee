@@ -570,7 +570,7 @@ Variant* CScript::GetVariable( LPFUNCTIONINFORMATION pScope, LPNODE pLHS, BOOL f
 
 		case ntARRAYDEREFERENCE:
         {
-            unsigned int uIndex = unsigned int(ExecuteStatements( pLHS->Right.pNode, pScope ) );
+	  unsigned int uIndex = (unsigned int) ExecuteStatements( pLHS->Right.pNode, pScope ) ;
             Variant v = ExecuteStatements( pLHS->Left.pNode, pScope );
             return v[uIndex];
 			break;

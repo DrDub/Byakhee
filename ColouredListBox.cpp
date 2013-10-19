@@ -2,7 +2,7 @@
 //
 
 #include "stdafx.h"
-#include "byakhee.h"
+#include "Byakhee.h"
 #include "ColouredListBox.h"
 
 #ifdef _DEBUG

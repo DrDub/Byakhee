@@ -69,36 +69,36 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDR_MAINFRAME           ICON                    "res\\Byakhee.ico"
-IDR_SHEETTYPE           ICON                    "res\\ByakheeDoc.ico"
-IDI_RANDOM              ICON                    "res\\random.ico"
-IDI_PENANDPAPER         ICON                    "res\\penandpaper.ico"
-IDI_UNDO                ICON                    "res\\undo.ico"
-IDI_INFO                ICON                    "res\\info.ico"
-IDI_INVESTIGATOR_WIZARD ICON                    "res\\investigator_wizard.ico"
-IDI_NEWSCRIPT           ICON                    "res\\newscript.ico"
-IDI_CLOSEDBOOK          ICON                    "res\\closedbook.ico"
-IDI_OPENBOOK            ICON                    "res\\openbook.ico"
-IDI_PAGE                ICON                    "res\\page.ico"
-IDR_SCRIPTEDITTYPE      ICON                    "res\\byakheescript.ico"
-IDI_NEWSHEETSCRIPT      ICON                    "res\\newsheetscript.ico"
-IDI_RUNSCRIPT           ICON                    "res\\runscript.ico"
-IDR_SCRIPTEDITTYPE_SHEET ICON                    "res\\sheetscript.ico"
-IDR_HANDOUTTYPE         ICON                    "res\\handout.ico"
-IDR_SCRIPTEDITTYPE_HANDOUT ICON                    "res\\scripthandout.ico"
-IDI_NEWHANDOUTSCRIPT    ICON                    "res\\newhando.ico"
+IDR_MAINFRAME           ICON                    "res/Byakhee.ico"
+IDR_SHEETTYPE           ICON                    "res/ByakheeDoc.ico"
+IDI_RANDOM              ICON                    "res/random.ico"
+IDI_PENANDPAPER         ICON                    "res/penandpaper.ico"
+IDI_UNDO                ICON                    "res/undo.ico"
+IDI_INFO                ICON                    "res/info.ico"
+IDI_INVESTIGATOR_WIZARD ICON                    "res/investigator_wizard.ico"
+IDI_NEWSCRIPT           ICON                    "res/newscript.ico"
+IDI_CLOSEDBOOK          ICON                    "res/closedbook.ico"
+IDI_OPENBOOK            ICON                    "res/openbook.ico"
+IDI_PAGE                ICON                    "res/page.ico"
+IDR_SCRIPTEDITTYPE      ICON                    "res/byakheescript.ico"
+IDI_NEWSHEETSCRIPT      ICON                    "res/newsheetscript.ico"
+IDI_RUNSCRIPT           ICON                    "res/runscript.ico"
+IDR_SCRIPTEDITTYPE_SHEET ICON                    "res/sheetscript.ico"
+IDR_HANDOUTTYPE         ICON                    "res/handout.ico"
+IDR_SCRIPTEDITTYPE_HANDOUT ICON                    "res/scripthandout.ico"
+IDI_NEWHANDOUTSCRIPT    ICON                    "res/newhando.ico"
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // Bitmap
 //
 
-IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
-IDB_WIZARD_NEWINVESTIGATOR BITMAP                  "res\\Wizard_NewCharacter.bmp"
-IDB_DIALOG_NEWDOCUMENT  BITMAP                  "res\\Dialog_NewDocument.bmp"
-IDB_SPLASH              BITMAP                  "res\\splash.bmp"
-IDB_TOOLBAR_NEWDOCDLG   BITMAP                  "res\\toolbar_newdocdlg.bmp"
-IDB_TIPOFTHEDAY         BITMAP                  "res\\TipOfTheDay.bmp"
+IDR_MAINFRAME           BITMAP                  "res/Toolbar.bmp"
+IDB_WIZARD_NEWINVESTIGATOR BITMAP                  "res/Wizard_NewCharacter.bmp"
+IDB_DIALOG_NEWDOCUMENT  BITMAP                  "res/Dialog_NewDocument.bmp"
+IDB_SPLASH              BITMAP                  "res/splash.bmp"
+IDB_TOOLBAR_NEWDOCDLG   BITMAP                  "res/toolbar_newdocdlg.bmp"
+IDB_TIPOFTHEDAY         BITMAP                  "res/TipOfTheDay.bmp"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -1055,8 +1055,8 @@ END
 // Cursor
 //
 
-IDC_HAND                CURSOR                  "res\\hand.cur"
-IDC_DRAGDROP            CURSOR                  "res\\dragdrop.cur"
+IDC_HAND                CURSOR                  "res/hand.cur"
+IDC_DRAGDROP            CURSOR                  "res/dragdrop.cur"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -1299,7 +1299,7 @@ END
 LANGUAGE 9, 1
 #pragma code_page(1252)
 #endif
-#include "res\Byakhee.rc2"  // non-Microsoft Visual C++ edited resources
+#include "res/Byakhee.rc2"  // non-Microsoft Visual C++ edited resources
 #include "afxres.rc"         // Standard components
 #include "afxprint.rc"       // printing/print preview resources
 #endif

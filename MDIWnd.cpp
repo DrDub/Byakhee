@@ -22,8 +22,8 @@
 #include "Byakhee.h"
 #include "MDIWnd.h"
 
-#include <sys\stat.h>
-#include <sys\types.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 
 #ifdef _DEBUG
 #undef THIS_FILE

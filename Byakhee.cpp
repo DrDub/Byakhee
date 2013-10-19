@@ -26,7 +26,7 @@
 #include "ChildFrm.h"
 #include "MultiFileMultiDocTemplate.h"
 #include "InvestigatorDoc.h"
-#include "InvestigatorView.h"
+#include "investigatorview.h"
 #include "ScriptEditDoc.h"
 #include "ScriptEditView.h"
 #include "HandoutDoc.h"

@@ -23,7 +23,7 @@
 #include "Byakhee.h"
 #include "MainFrm.h"
 #include "InvestigatorDoc.h"
-#include "InvestigatorView.h"
+#include "investigatorview.h"
 #include "ScriptEngine/ScriptObject.h"
 #include "ScriptEngine/Variant.h"
 #include "SectionFile.h"

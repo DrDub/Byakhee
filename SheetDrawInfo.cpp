@@ -21,7 +21,7 @@
  */
 
 #include "stdafx.h"
-#include "byakhee.h"
+#include "Byakhee.h"
 #include "SheetDrawInfo.h"
 #include "MainFrm.h"
 #include <math.h>

@@ -2,7 +2,7 @@
 //
 
 #include "stdafx.h"
-#include "byakhee.h"
+#include "Byakhee.h"
 #include "MainFrm.h"
 #include "Output.h"
 

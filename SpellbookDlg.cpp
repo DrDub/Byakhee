@@ -19,7 +19,7 @@
  */
 
 #include "stdafx.h"
-#include "byakhee.h"
+#include "Byakhee.h"
 #include "SectionFile.h"
 #include "ParseBuffer.h"
 #include "SpellbookDlg.h"

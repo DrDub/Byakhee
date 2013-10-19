@@ -161,9 +161,9 @@ BOOL Variant::operator==(const Variant& varSrc) const
 	{
 		case NULL_TYPE:     return varSrc.IsNULL();
 		case PSTR_TYPE:		return strcmp( m_pszValue, LPCSTR(varSrc) ) == 0;
-		case INT_TYPE:		return m_nValue == int(varSrc);
-		case UINT_TYPE:		return m_uValue == unsigned int(varSrc);
-		case DOUBLE_TYPE:	return m_dValue == double(varSrc);
+	case INT_TYPE:		return m_nValue == (int)(varSrc);
+	  case UINT_TYPE:		return m_uValue == (unsigned int)(varSrc);
+						    case DOUBLE_TYPE:	return m_dValue == (double)(varSrc);
 		case PVARIANT_TYPE: if( this == m_pVariant ) return TRUE; else return (*m_pVariant == varSrc);
 		case POBJECT_TYPE:  return (*m_pObject == varSrc);
 		default:			return FALSE;
@@ -177,9 +177,9 @@ BOOL Variant::operator!=(const Variant& varSrc) const
 	{
 		case NULL_TYPE:     return !varSrc.IsNULL();
 		case PSTR_TYPE:		return strcmp(m_pszValue, LPCSTR(varSrc) ) != 0;
-		case INT_TYPE:		return m_nValue != int(varSrc);
-		case UINT_TYPE:		return m_uValue != unsigned int(varSrc);
-		case DOUBLE_TYPE:	return m_dValue != double(varSrc);
+    	        case INT_TYPE:		return m_nValue != (int)(varSrc);
+	        case UINT_TYPE:		return m_uValue != (unsigned int)(varSrc);
+		case DOUBLE_TYPE:	return m_dValue != (double)(varSrc);
 		case PVARIANT_TYPE: if( this == m_pVariant ) return FALSE; else return (*m_pVariant != varSrc);
 		case POBJECT_TYPE:  return (*m_pObject != varSrc );
 		default:			return FALSE;
@@ -193,8 +193,8 @@ BOOL Variant::operator<(const Variant& varSrc) const
 	{
 		case NULL_TYPE:     return FALSE;
 		case PSTR_TYPE:		return strcmp( m_pszValue, LPCSTR(varSrc) ) < 0;
-		case INT_TYPE:		return m_nValue < int(varSrc);
-		case UINT_TYPE:		return m_uValue < unsigned int(varSrc);
+		case INT_TYPE:		return m_nValue < (int)(varSrc);
+		case UINT_TYPE:		return m_uValue < (unsigned int)(varSrc);
 		case DOUBLE_TYPE:	return m_dValue < double(varSrc);
 		case PVARIANT_TYPE: if( this == m_pVariant ) return FALSE; else return (*m_pVariant < varSrc);
 		case POBJECT_TYPE:  return (*m_pObject < varSrc );
@@ -209,8 +209,8 @@ BOOL Variant::operator<=(const Variant& varSrc) const
 	{
 		case NULL_TYPE:     return varSrc.IsNULL();
 		case PSTR_TYPE:		return strcmp( m_pszValue, LPCSTR(varSrc) ) <= 0;
-		case INT_TYPE:		return m_nValue <= int(varSrc);
-		case UINT_TYPE:		return m_uValue <= unsigned int(varSrc);
+		case INT_TYPE:		return m_nValue <= (int)(varSrc);
+		case UINT_TYPE:		return m_uValue <= (unsigned int)(varSrc);
 		case DOUBLE_TYPE:	return m_dValue <= double(varSrc);
 		case PVARIANT_TYPE: if( this == m_pVariant ) return FALSE; else return (*m_pVariant <= varSrc);
 		case POBJECT_TYPE:  return (*m_pObject <= varSrc );
@@ -225,8 +225,8 @@ BOOL Variant::operator>=(const Variant& varSrc) const
 	{
 		case NULL_TYPE:     return varSrc.IsNULL();
 		case PSTR_TYPE:		return strcmp( m_pszValue, LPCSTR(varSrc) ) >= 0;
-		case INT_TYPE:		return m_nValue >= int(varSrc);
-		case UINT_TYPE:		return m_uValue >= unsigned int(varSrc);
+		case INT_TYPE:		return m_nValue >= (int)(varSrc);
+		case UINT_TYPE:		return m_uValue >= (unsigned int)(varSrc);
 		case DOUBLE_TYPE:	return m_dValue >= double(varSrc);
 		case PVARIANT_TYPE: if( this == m_pVariant ) return FALSE; else return (*m_pVariant >= varSrc);
 		case POBJECT_TYPE:  return (*m_pObject >= varSrc );
@@ -241,8 +241,8 @@ BOOL Variant::operator>(const Variant& varSrc) const
 	{
 		case NULL_TYPE:     return FALSE;
 		case PSTR_TYPE:		return strcmp( m_pszValue, LPCSTR(varSrc) ) > 0;
-		case INT_TYPE:		return m_nValue > int(varSrc);
-		case UINT_TYPE:		return m_uValue > unsigned int(varSrc);
+		case INT_TYPE:		return m_nValue > (int)(varSrc);
+		case UINT_TYPE:		return m_uValue > (unsigned int)(varSrc);
 		case DOUBLE_TYPE:	return m_dValue > double(varSrc);
 		case PVARIANT_TYPE: if( this == m_pVariant ) return FALSE; else return (*m_pVariant > varSrc);
 		case POBJECT_TYPE:  return (*m_pObject > varSrc );
@@ -257,8 +257,8 @@ BOOL Variant::operator&&(const Variant& varSrc) const
 	{
 		case NULL_TYPE:     return FALSE;
 		case PSTR_TYPE:		throw INVALID_OPERATOR_STRING;
-		case INT_TYPE:		return m_nValue && int(varSrc);
-		case UINT_TYPE:		return m_uValue && unsigned int(varSrc);
+		case INT_TYPE:		return m_nValue && (int)(varSrc);
+		case UINT_TYPE:		return m_uValue && (unsigned int)(varSrc);
 		case DOUBLE_TYPE:	return m_dValue && double(varSrc);
 		case PVARIANT_TYPE: if( this == m_pVariant ) return FALSE; else return (*m_pVariant && varSrc);
 		case POBJECT_TYPE:  return (*m_pObject && varSrc );
@@ -274,7 +274,7 @@ BOOL Variant::operator||(const Variant& varSrc) const
 		case NULL_TYPE:     return int(varSrc);
 		case PSTR_TYPE:		return INVALID_OPERATOR_STRING;
 		case INT_TYPE:		return m_nValue || int(varSrc);
-		case UINT_TYPE:		return m_uValue || unsigned int(varSrc);
+		case UINT_TYPE:		return m_uValue || (unsigned int)(varSrc);
 		case DOUBLE_TYPE:	return m_dValue || double(varSrc);
 		case PVARIANT_TYPE: if( this == m_pVariant ) return FALSE; else return (*m_pVariant || varSrc);
 		case POBJECT_TYPE:  return (*m_pObject || varSrc );
@@ -297,8 +297,8 @@ Variant Variant::operator+(const Variant& varSrc) const
 	{
 		case PSTR_TYPE:		throw INVALID_OPERATOR_STRING;
 		case NULL_TYPE:     //treat as integer
-		case INT_TYPE:		return varSrc.GetActualType() == DOUBLE_TYPE ? (double)m_nValue + double(varSrc) : m_nValue + int(varSrc);
-		case UINT_TYPE:		return varSrc.GetActualType() == DOUBLE_TYPE ? (double)m_uValue + double(varSrc) : int(m_uValue) + int(varSrc);
+		case INT_TYPE:		return varSrc.GetActualType() == DOUBLE_TYPE ? (double)m_nValue + double(varSrc) : m_nValue + (int)(varSrc);
+		case UINT_TYPE:		return varSrc.GetActualType() == DOUBLE_TYPE ? (double)m_uValue + double(varSrc) : (int)(m_uValue) + (int)(varSrc);
 		case DOUBLE_TYPE:	return m_dValue + double(varSrc);
 		case PVARIANT_TYPE: return (*m_pVariant + varSrc);
 		case POBJECT_TYPE:  return (*m_pObject + varSrc);
@@ -315,8 +315,8 @@ Variant Variant::operator-(const Variant& varSrc) const
 	{
 		case PSTR_TYPE:		throw INVALID_OPERATOR_STRING;
 		case NULL_TYPE:     //treat as integer
-		case INT_TYPE:		return varSrc.GetActualType() == DOUBLE_TYPE ? (double)m_nValue - double(varSrc) : m_nValue - int(varSrc);
-		case UINT_TYPE:		return varSrc.GetActualType() == DOUBLE_TYPE ? (double)m_uValue - double(varSrc) : int(m_uValue) - int(varSrc);
+		case INT_TYPE:		return varSrc.GetActualType() == DOUBLE_TYPE ? (double)m_nValue - double(varSrc) : m_nValue - (int)(varSrc);
+		case UINT_TYPE:		return varSrc.GetActualType() == DOUBLE_TYPE ? (double)m_uValue - double(varSrc) : (int)(m_uValue) - (int)(varSrc);
 		case DOUBLE_TYPE:	return m_dValue - double(varSrc);
 		case PVARIANT_TYPE: return (*m_pVariant - varSrc);
 		case POBJECT_TYPE:  return (*m_pObject - varSrc );
@@ -332,8 +332,8 @@ Variant Variant::operator*(const Variant& varSrc) const
 	{
 		case NULL_TYPE:     return 0;
 		case PSTR_TYPE:		throw INVALID_OPERATOR_STRING;
-		case INT_TYPE:		return varSrc.GetActualType() == DOUBLE_TYPE ? (double)m_nValue * double(varSrc) : m_nValue * int(varSrc);
-		case UINT_TYPE:		return varSrc.GetActualType() == DOUBLE_TYPE ? (double)m_uValue * double(varSrc) : int(m_uValue) * int(varSrc);
+		case INT_TYPE:		return varSrc.GetActualType() == DOUBLE_TYPE ? (double)m_nValue * double(varSrc) : m_nValue * (int)(varSrc);
+		case UINT_TYPE:		return varSrc.GetActualType() == DOUBLE_TYPE ? (double)m_uValue * double(varSrc) : (int)(m_uValue) * (int)(varSrc);
 		case DOUBLE_TYPE:	return m_dValue * double(varSrc);
 		case PVARIANT_TYPE: return (*m_pVariant * varSrc);
 		case POBJECT_TYPE:  return (*m_pObject * varSrc );
@@ -350,8 +350,8 @@ Variant Variant::operator/(const Variant& varSrc) const
 	switch( m_Type )
 	{
 		case NULL_TYPE:     return 0;
-		case INT_TYPE:		return varSrc.GetActualType() == DOUBLE_TYPE ? (double)m_nValue / double(varSrc) : m_nValue / int(varSrc);
-		case UINT_TYPE:		return varSrc.GetActualType() == DOUBLE_TYPE ? (double)m_uValue / double(varSrc) : int(m_uValue) / int(varSrc);
+		case INT_TYPE:		return varSrc.GetActualType() == DOUBLE_TYPE ? (double)m_nValue / double(varSrc) : m_nValue / (int)(varSrc);
+		case UINT_TYPE:		return varSrc.GetActualType() == DOUBLE_TYPE ? (double)m_uValue / double(varSrc) : (int)(m_uValue) / (int)(varSrc);
 		case DOUBLE_TYPE:	return m_dValue / double(varSrc);
 		case PVARIANT_TYPE: return (*m_pVariant / varSrc);
 		case POBJECT_TYPE:  return (*m_pObject / varSrc );
@@ -369,8 +369,8 @@ Variant Variant::operator%(const Variant& varSrc) const
 	{
 		case NULL_TYPE:     return 0;
 		case PSTR_TYPE:		throw INVALID_OPERATOR_STRING;
-		case INT_TYPE:		return Variant(m_nValue % int(varSrc));
-		case UINT_TYPE:		return Variant(m_uValue % int(varSrc));
+		case INT_TYPE:		return Variant(m_nValue % (int)(varSrc));
+		case UINT_TYPE:		return Variant(m_uValue % (int)(varSrc));
 		case DOUBLE_TYPE:	return Variant( fmod( m_dValue, double(varSrc) ));
 		case PVARIANT_TYPE: return (*m_pVariant % varSrc);
 		case POBJECT_TYPE:  return (*m_pObject % varSrc );
@@ -386,9 +386,9 @@ Variant Variant::operator&(const Variant& varSrc) const
 	{
 		case PSTR_TYPE:		throw INVALID_OPERATOR_STRING;
 		case NULL_TYPE:     //treat as integer
-		case INT_TYPE:		return Variant(m_nValue & int(varSrc));
-		case UINT_TYPE:		return Variant(m_uValue & unsigned int(varSrc));
-		case DOUBLE_TYPE:	return Variant(int(m_dValue) & int(varSrc));
+	case INT_TYPE:		return Variant(m_nValue & (int)(varSrc));
+	case UINT_TYPE:		return Variant(m_uValue & (unsigned int)(varSrc));
+	case DOUBLE_TYPE:	return Variant((int)(m_dValue) & (int)(varSrc));
 		case PVARIANT_TYPE: return (*m_pVariant & varSrc);
 		case POBJECT_TYPE:  return (*m_pObject & varSrc );
 		default:			return FALSE;
@@ -403,9 +403,9 @@ Variant Variant::operator|(const Variant& varSrc) const
 	{
 		case PSTR_TYPE:		throw INVALID_OPERATOR_STRING;
 		case NULL_TYPE:     //treat as integer
-		case INT_TYPE:		return Variant(m_nValue | int(varSrc));
-		case UINT_TYPE:		return Variant(m_uValue | unsigned int(varSrc));
-		case DOUBLE_TYPE:	return Variant(int(m_dValue) | int(varSrc));
+		case INT_TYPE:		return Variant(m_nValue | (int)(varSrc));
+		case UINT_TYPE:		return Variant(m_uValue | (unsigned int)(varSrc));
+		case DOUBLE_TYPE:	return Variant((int)(m_dValue) | (int)(varSrc));
 		case PVARIANT_TYPE: return (*m_pVariant | varSrc);
 		case POBJECT_TYPE:  return (*m_pObject | varSrc );
 		default:			return FALSE;
@@ -420,9 +420,9 @@ Variant Variant::operator^(const Variant& varSrc) const
 	{
 		case PSTR_TYPE:		throw INVALID_OPERATOR_STRING;
 		case NULL_TYPE:     //treat as integer
-		case INT_TYPE:		return Variant(m_nValue ^ int(varSrc));
-		case UINT_TYPE:		return Variant(m_uValue ^ unsigned int(varSrc));
-		case DOUBLE_TYPE:	return Variant(int(m_dValue) ^ int(varSrc));
+		case INT_TYPE:		return Variant(m_nValue ^ (int)(varSrc));
+		case UINT_TYPE:		return Variant(m_uValue ^ (unsigned int)(varSrc));
+		case DOUBLE_TYPE:	return Variant((int)(m_dValue) ^ (int)(varSrc));
 		case PVARIANT_TYPE: return (*m_pVariant ^ varSrc);
 		case POBJECT_TYPE:  return (*m_pObject ^ varSrc );
 		default:			return FALSE;
@@ -526,7 +526,7 @@ Variant Variant::operator--(int)
 }
 
 
-Variant& Variant::operator<<(int nBits) const
+const Variant& Variant::operator<<(int nBits) const
 {
 	switch( m_Type )
 	{
@@ -534,14 +534,14 @@ Variant& Variant::operator<<(int nBits) const
 		case PSTR_TYPE:		throw INVALID_OPERATOR_STRING;
 		case INT_TYPE:		return Variant( m_nValue << nBits );
 		case UINT_TYPE:		return Variant( m_uValue << nBits );
-		case DOUBLE_TYPE:	return Variant( int(m_dValue) << nBits );
+		case DOUBLE_TYPE:	return Variant( (int)(m_dValue) << nBits );
 		case PVARIANT_TYPE: return (*m_pVariant) << nBits;
 		case POBJECT_TYPE:  return (*m_pObject) << nBits;
 		default:			return Variant(0);
 	}
 }
 
-Variant& Variant::operator>>(int nBits) const
+const Variant& Variant::operator>>(int nBits) const
 {
 	switch( m_Type )
 	{
@@ -549,7 +549,7 @@ Variant& Variant::operator>>(int nBits) const
 		case PSTR_TYPE:		throw INVALID_OPERATOR_STRING;
 		case INT_TYPE:		return Variant( m_nValue >> nBits );
 		case UINT_TYPE:		return Variant( m_uValue >> nBits );
-		case DOUBLE_TYPE:	return Variant( int(m_dValue) >> nBits );
+		case DOUBLE_TYPE:	return Variant( (int)(m_dValue) >> nBits );
 		case PVARIANT_TYPE: return (*m_pVariant) >> nBits;
 		case POBJECT_TYPE:  return (*m_pObject) >> nBits;
 		default:			return Variant(0);
@@ -637,7 +637,7 @@ const Variant& Variant::operator>>=(int nBits)
 		case NULL_TYPE:		m_Type = INT_TYPE; //drop through
 		case INT_TYPE:		m_nValue >>= nBits; break;
 		case UINT_TYPE:		m_uValue >>= nBits; break;
-		case DOUBLE_TYPE:	*this = int(*this) >> nBits; break;
+		case DOUBLE_TYPE:	*this = (int)(*this) >> nBits; break;
 		case PVARIANT_TYPE: *m_pVariant = *m_pVariant >> nBits; break;
 		case POBJECT_TYPE:  *m_pObject >>= nBits; break;
 	}
@@ -653,7 +653,7 @@ const Variant& Variant::operator<<=(int nBits)
 		case NULL_TYPE:		m_Type = INT_TYPE; //drop through
 		case INT_TYPE:		m_nValue <<= nBits; break;
 		case UINT_TYPE:		m_uValue <<= nBits; break;
-		case DOUBLE_TYPE:	*this = int(*this) << nBits; break;
+		case DOUBLE_TYPE:	*this = (int)(*this) << nBits; break;
 		case PVARIANT_TYPE: *m_pVariant = *m_pVariant << nBits; break;
 		case POBJECT_TYPE:  *m_pObject <<= nBits; break;
 	}
@@ -829,8 +829,8 @@ inline Variant::operator int() const
 		case INT_TYPE:		return m_nValue;
 		case UINT_TYPE:		return m_uValue;
 		case DOUBLE_TYPE:	return (int)m_dValue;
-		case PVARIANT_TYPE: return int(*m_pVariant);
-        case POBJECT_TYPE:  return int(*m_pObject);
+	case PVARIANT_TYPE: return (int)(*m_pVariant);
+        case POBJECT_TYPE:  return (int)(*m_pObject);
 		default: return 0;
 	}
 }
@@ -844,8 +844,8 @@ inline Variant::operator unsigned int() const
 		case INT_TYPE:		return abs(m_nValue);
 		case UINT_TYPE:		return m_uValue;
 		case DOUBLE_TYPE:	return (unsigned int)m_dValue;
-		case PVARIANT_TYPE: return unsigned int(*m_pVariant);
-        case POBJECT_TYPE:  return unsigned int(*m_pObject);
+		case PVARIANT_TYPE: return (unsigned int)(*m_pVariant);
+        case POBJECT_TYPE:  return (unsigned int)(*m_pObject);
 		default: return 0;
 	}
 }

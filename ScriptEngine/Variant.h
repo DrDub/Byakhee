@@ -80,8 +80,8 @@ public:
 	Variant& operator--();
 	Variant operator++(int);
 	Variant operator--(int);
-	Variant& operator<<(int nBits) const;
-	Variant& operator>>(int nBits) const;
+	const Variant& operator<<(int nBits) const;
+	const Variant& operator>>(int nBits) const;
     PVARIANT operator[]( UINT nPos ) const;
 
 	//assignment operators
