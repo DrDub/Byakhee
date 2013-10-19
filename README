@@ -28,3 +28,14 @@ source code is being hosted at https://github.com/jcfiala/Byakhee, partially
 because John is no fan of CVS, which sourceforge is stuck at.  
 
 John Fiala can be contacted thorugh his website, or at jcfiala at gmail dot com.
+
+Wine on-going port
+------------------
+
+(This port by Pablo Duboue, pablo dot duboue at gmail dot com)
+
+So far only the ScriptEngine compiles. The rest of the build requires MFC classes
+which I don't have. I'm considering migrating Byakhee to Win32++ so it can be
+built with DevC++.
+
+http://win32-framework.sourceforge.net/
